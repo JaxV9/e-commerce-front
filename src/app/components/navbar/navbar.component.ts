@@ -14,9 +14,11 @@ export class NavbarComponent {
   constructor(private userAuthenticationService: UserAuthenticationService) {}
 
   openSignInModal(): void {
-    this.userAuthenticationService.loginModalIsActive.set(true);
+    this.userAuthenticationService.loginModalIsActive.update(value => !value);
+    this.userAuthenticationService.signupModalIsActive.set(false);
   }
   openSignUpModal(): void {
-    this.userAuthenticationService.signupModalIsActive.set(true);
+    this.userAuthenticationService.signupModalIsActive.update(value => !value);
+    this.userAuthenticationService.loginModalIsActive.set(false);
   }
 }

@@ -3,12 +3,25 @@
     <h1>{{ title() }}</h1>
     @if (userAuthenticationService.loginModalIsActive()) {
         <app-modal title="SignIn">
-            <label>Email</label>
-            <input type="text" />
+            <label for="email">Email</label>
+            <input id="email" type="text" />
 
-            <label>Pasword</label>
-            <input type="text" />
-            <button>Confirm</button>
+            <label for="password">Pasword</label>
+            <input id="password" type="password" />
+            <button (click)="login()">Confirm</button>
+        </app-modal>
+    }
+    @if (userAuthenticationService.signupModalIsActive()) {
+        <app-modal title="Signup">
+            <label for="name">Name</label>
+            <input id="name" type="text" />
+
+            <label for="email">Email</label>
+            <input id="email" type="text" />
+
+            <label for="password">Pasword</label>
+            <input id="password" type="password" />
+            <button (click)="signup()">Confirm</button>
         </app-modal>
     }
     <ng-content />

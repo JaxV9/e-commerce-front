@@ -1,7 +1,7 @@
-<a [routerLink]="['/products', product().id]">
+<a [routerLink]="['/products', product()?.id]">
     <div class="product-container">
         <img class="product-image" src="https://fr.shopping.rakuten.com/photo/2151526453.jpg" />
-        <p class="text-center">{{product().title}}</p>
-        <p class="text-center">{{formateDate(product().createdAt)}}</p>
+        <p class="text-center">{{product()?.title}}</p>
+        <p class="text-center">{{formateDate(product()?.createdAt)}}</p>
     </div>
 </a>

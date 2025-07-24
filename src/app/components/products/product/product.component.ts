@@ -10,16 +10,19 @@ import { RouterModule } from '@angular/router';
   styleUrl: './product.component.css',
 })
 export class ProductComponent {
-  readonly product = input.required<Product>();
+  readonly product = input.required<Product | undefined>();
 
-  formateDate(date: string) {
-    const currentDate = new Date(date);
-    const formatted = currentDate.toLocaleString('fr-FR', {
-      dateStyle: 'short',
-      timeStyle: 'short',
-      timeZone: 'Europe/Paris',
-    });
+  formateDate(date: string | undefined) {
+    if (date) {
+      const currentDate = new Date(date);
+      const formatted = currentDate.toLocaleString('fr-FR', {
+        dateStyle: 'short',
+        timeStyle: 'short',
+        timeZone: 'Europe/Paris',
+      });
 
-    return formatted;
+      return formatted;
+    }
+    return '';
   }
 }

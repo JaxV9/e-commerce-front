@@ -35,6 +35,14 @@ An Angular 18 frontend application for the e-commerce project. This project incl
 
 ---
 
+## 🏗️ Global architecture
+
+Architecture of the complete project 
+
+<img src="img/archi.png"></img>
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites

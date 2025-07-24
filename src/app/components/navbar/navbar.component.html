@@ -3,5 +3,9 @@
         <a routerLink="/">Home</a>
         <a routerLink="/products">Products</a>
     </div>
-    <a class="dashboard" routerLink="/dashboard">Dashboard</a>
+    <div class="user-account-nav">
+        <a class="dashboard margin-auto" routerLink="/dashboard">Dashboard</a>
+        <button (click)="openSignInModal()" class="signin">Sign-in</button>
+        <button class="signup">Sign-up</button>
+    </div>
 </div>

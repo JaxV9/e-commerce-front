@@ -19,7 +19,18 @@
         margin-left: 42px;
     }
 
-    .dashboard {
+    .user-account-nav {
+        display: flex;
+        flex-direction: row;
+        gap: 16px;
         margin-right: 42px;
+    }
+
+    .signin, .signup {
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 8px;
+        padding: 8px 16px;
     }
 }

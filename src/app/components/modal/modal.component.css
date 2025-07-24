@@ -1,0 +1,26 @@
+:host {
+    .modal-container {
+        position: fixed;
+        min-width: 300px;
+        min-height: 300px;
+        width: fit-content;
+        height: "fit-content";
+        background-color: rgb(245, 241, 241);
+        border-radius: 16px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 16px 28px;
+        box-shadow: 0 4px 3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .modal-title {
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+    }
+}

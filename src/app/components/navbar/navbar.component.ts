@@ -1,7 +1,10 @@
-import { Component, effect, signal } from '@angular/core';
+import { Component, effect, signal, Injectable } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { UserAuthenticationService } from '../../services/user-authentication.service';
 
+@Injectable({
+  providedIn: 'root',
+})
 @Component({
   selector: 'app-navbar',
   standalone: true,

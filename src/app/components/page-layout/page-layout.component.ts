@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, Injectable } from '@angular/core';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { UserAuthenticationService } from '../../services/user-authentication.service';
 import { ModalComponent } from '../modal/modal.component';
@@ -12,15 +12,15 @@ import { ModalComponent } from '../modal/modal.component';
 export class PageLayoutComponent {
   title = input<string>();
 
-  constructor(public userAuthenticationService: UserAuthenticationService) {}
+  constructor(public userAuthenticationService: UserAuthenticationService, public navbarComponent: NavbarComponent) {}
 
   async login() : Promise<void> {
     const payload = {
       email: (document.getElementById("email") as HTMLInputElement).value,
       password: (document.getElementById("password") as HTMLInputElement).value
     };
-    console.log(payload)
     this.userAuthenticationService.login(payload)
+    this.navbarComponent.openSignInModal()
   }
 
   async signup() : Promise<void> {
@@ -30,7 +30,7 @@ export class PageLayoutComponent {
       password: (document.getElementById("password") as HTMLInputElement).value,
       role: "USER"
     };
-     console.log(payload)
     this.userAuthenticationService.register(payload)
+    this.navbarComponent.openSignUpModal()
   }
 }

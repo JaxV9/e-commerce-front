@@ -7,8 +7,7 @@ import { QuickHttp, ResAction } from '@jaslay/http';
 })
 export class UserAuthenticationService {
   loginModalIsActive = signal<boolean>(false);
-  signupModalIsActive = signal<boolean>(false);
-  
+  signupModalIsActive = signal<boolean>(false);  
 
   baseUrl: string = 'https://e-commerce-back-pre-prod.up.railway.app/';
   headers = {

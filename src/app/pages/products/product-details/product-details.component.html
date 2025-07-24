@@ -1,3 +1,7 @@
 <app-page-layout title="Your product">
-
+    <section class="product-container">
+        @if (currentProduct() !== undefined) {
+            <app-product [product]="currentProduct()"/>
+        }
+    </section>
 </app-page-layout>

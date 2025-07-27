@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { PageLayoutComponent } from '../../components/page-layout/page-layout.component';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-home',
@@ -8,4 +9,6 @@ import { PageLayoutComponent } from '../../components/page-layout/page-layout.co
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  constructor(public productsService: ProductsService) {}
+}

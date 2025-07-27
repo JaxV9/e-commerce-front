@@ -12,9 +12,5 @@ import { ProductComponent } from '../../components/products/product/product.comp
   styleUrl: './products.component.css',
 })
 export class ProductsComponent {
-  constructor(public productsService: ProductsService) {
-    effect(() => {
-      console.log(this.productsService.products());
-    });
-  }
+  constructor(public productsService: ProductsService) {}
 }

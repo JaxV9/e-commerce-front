@@ -13,15 +13,26 @@ import { UserAuthenticationService } from '../../services/user-authentication.se
   styleUrl: './navbar.component.css',
 })
 export class NavbarComponent {
-  test = signal('true');
-  constructor(private userAuthenticationService: UserAuthenticationService) {}
+  userIsConnected = signal<boolean>(false);
+
+  constructor(private userAuthenticationService: UserAuthenticationService) {
+    effect(() => {
+      if (this.userAuthenticationService.user()) {
+        this.userIsConnected.set(false);
+      } else {
+        this.userIsConnected.set(true);
+      }
+    });
+  }
 
   openSignInModal(): void {
-    this.userAuthenticationService.loginModalIsActive.update(value => !value);
+    this.userAuthenticationService.loginModalIsActive.update((value) => !value);
     this.userAuthenticationService.signupModalIsActive.set(false);
   }
   openSignUpModal(): void {
-    this.userAuthenticationService.signupModalIsActive.update(value => !value);
+    this.userAuthenticationService.signupModalIsActive.update(
+      (value) => !value
+    );
     this.userAuthenticationService.loginModalIsActive.set(false);
   }
 }

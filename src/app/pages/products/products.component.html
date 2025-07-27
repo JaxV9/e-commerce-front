@@ -1,0 +1,7 @@
+<app-page-layout title="Products">
+<app-products-ui>
+    @for (product of productsService.products(); track $index) {
+           <app-product [product]="product"/>
+    }
+</app-products-ui>
+</app-page-layout>
